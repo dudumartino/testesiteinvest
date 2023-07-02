@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>InvestWiki - Cryptocurrency Prices</title>
+  <style>
+    h1 {
+      color: #ff9900;
+      font-size: 24px;
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .positive {
+      color: green;
+    }
+    .negative {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>InvestWiki - Cryptocurrency Prices</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Coin Name</th>
+        <th>Current Price</th>
+        <th>Change (24h)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Bitcoin</td>
+        <td id="bitcoin-price">$0</td>
+        <td id="bitcoin-change">0%</td>
+      </tr>
+      <tr>
+        <td>Ethereum</td>
+        <td id="ethereum-price">$0</td>
+        <td id="ethereum-change">0%</td>
+      </tr>
+      <!-- Add more rows for other cryptocurrencies -->
+    </tbody>
+  </table>
+
+  <script>
+    $(document).ready(function() {
+      // Array with cryptocurrency symbols
+      var symbols = ['bitcoin', 'ethereum'];
+
+      // Function to format the price with two decimal places
+      function formatPrice(price) {
+        return '$' + price.toFixed(2);
+      }
+
+      // Function to update the values in the table
+      function updateTable() {
+        symbols.forEach(function(symbol) {
+          // Make an AJAX request to get cryptocurrency data
+          $.ajax({
+            url: 'https://api.coingecko.com/api/v3/simple/price?ids=' + symbol + '&vs_currencies=usd&include_24hr_change=true',
+            method: 'GET',
+            success: function(data) {
+              // Get the price and change values
+              var price = data[symbol].usd;
+              var change = data[symbol].usd_24h_change;
+
+              // Update the values in the table
+              $('#' + symbol + '-price').text(formatPrice(price));
+              $('#' + symbol + '-change').text(change.toFixed(2) + '%');
+
+              // Add the 'positive' or 'negative' class depending on the change value
+              if (change > 0) {
+                $('#' + symbol + '-change').addClass('positive').removeClass('negative');
+              } else {
+                $('#' + symbol + '-change').addClass('negative').removeClass('positive');
+              }
+            },
+            error: function() {
+              console.log('Error retrieving cryptocurrency data for ' + symbol);
+            }
+          });
+        });
+      }
+
+      // Call the table update function initially
+      updateTable();
+
+      // Update the table every 5 seconds
+      setInterval(updateTable, 5000);
+    });
+  </script>
+</body>
+</html>

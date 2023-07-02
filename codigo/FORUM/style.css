@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0.1px;
+}
+
+
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+}
+
+.post {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.comments {
+  margin-top: 10px;
+  padding-left: 20px;
+  border-left: 1px solid #ccc;
+<<<<<<< HEAD
+}
+
+header {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  height: 115px;
+  z-index: 999; /* Adicione um valor alto ao z-index para garantir que o header fique acima dos outros elementos */
+  background-image: linear-gradient(to right, #629a3e, yellow);
+  text-align: center;
+}
+
+.titulo a{
+  text-decoration: none;
+  color: black;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: oblique;
+}
+h1{
+  text-align: left;
+  margin-top: 35px ;
+}
+.titulo2 a{
+  margin-bottom: 10px;
+}
+=======
+}
+>>>>>>> 79158cf1617e1d92963d95f0674346ca6f32706a

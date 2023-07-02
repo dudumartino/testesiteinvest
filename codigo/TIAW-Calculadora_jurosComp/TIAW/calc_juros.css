@@ -1,0 +1,123 @@
+body {
+    background-color: lightgray;
+    font-family: Arial, sans-serif;
+    margin: 0%;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #dbd440;
+}
+
+
+.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
+    height: 115px;
+    z-index: 999; /* Adicione um valor alto ao z-index para garantir que o header fique acima dos outros elementos */
+    background-image: linear-gradient(to right, #629a3e, yellow);
+    text-align: center;
+}
+
+.titulo a{
+    text-decoration: none;
+    color: black;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: oblique;
+}
+h1{
+    text-align: left;
+    margin-top: 35px ;
+}
+.titulo2 a{
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: #d8e8c4;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #3f7e44;
+}
+
+input[type="number"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.2rem;
+}
+
+
+.resultados {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+.resultados label {
+    display: inline-block;
+    width: 120px;
+    color: #3f7e44;
+}
+
+.resultados input {
+    display: inline-block;
+    width: calc(100% - 120px);
+    margin-left: 10px;
+    border: none;
+    font-weight: bold;
+    color: #3f7e44;
+}
+
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 80px;
+    border: none;
+    background-color: #fbbf45;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    align-self: flex-end;
+}
+
+button:hover {
+    background-color: #f9a825;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ffff00;
+    border-radius: 5px;
+    background-color: #d8e8c4;
+    color: #3f7e44;
+}
